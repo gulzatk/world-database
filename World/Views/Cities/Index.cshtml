@@ -1,0 +1,17 @@
+@using World.Models;
+
+<h1>Cities List</h1>
+
+<ul>
+@if (Model.Count == 0)
+{
+  <p>You have no cities in your list!</p>
+}
+@if(Model.Count != 0)
+{
+  @foreach (City city in Model)
+  {
+    <li>@city.GetId(), @city.GetName(), @city.GetCountryCode()</li>
+  }
+}
+</ul>
